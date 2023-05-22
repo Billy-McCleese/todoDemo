@@ -1,0 +1,15 @@
+<h2>Todos</h2>
+
+<div *ngFor="let todo of todos">
+  <p>{{ todo.task }}</p>
+  <button *ngIf="!todo.completed" (click)="completeTask(todo)">Complete</button>
+</div>
+
+<hr>
+
+<h2>Add a new task</h2>
+
+<form (ngSubmit)="addTask(newTask.value); newTask.value = ''">
+  <input type="text" #newTask placeholder="Enter a new task" required>
+  <button type="submit">Add</button>
+</form>
